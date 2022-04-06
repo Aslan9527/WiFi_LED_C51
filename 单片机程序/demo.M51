@@ -1,0 +1,172 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/23/2018  15:13:18  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+G:\KEIL2\C51\BIN\BL51.EXE demo.obj TO demo
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  demo.obj (DEMO)
+  G:\KEIL2\C51\LIB\C51S.LIB (?C_STARTUP)
+  G:\KEIL2\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  demo (DEMO)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0019H     UNIT         ?PR?MAIN?DEMO
+                    001CH     0007H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     002DH     UNIT         ?PR?SERIAL_INTERRUPT?DEMO
+            CODE    0053H     0024H     UNIT         ?CO?DEMO
+            CODE    0077H     0019H     UNIT         ?C?LIB_CODE
+            CODE    0090H     0017H     UNIT         ?PR?ESP8266_INIT?DEMO
+            CODE    00A7H     0016H     UNIT         ?PR?SERIALINTI?DEMO
+            CODE    00BDH     0016H     UNIT         ?PR?_UART1SENDS?DEMO
+            CODE    00D3H     000CH     UNIT         ?C_C51STARTUP
+            CODE    00DFH     000BH     UNIT         ?PR?_DELAY?DEMO
+
+
+
+OVERLAY MAP OF MODULE:   demo (DEMO)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?DEMO
+
+?PR?MAIN?DEMO
+  +--> ?PR?_DELAY?DEMO
+  +--> ?PR?SERIALINTI?DEMO
+  +--> ?PR?ESP8266_INIT?DEMO
+
+?PR?ESP8266_INIT?DEMO
+  +--> ?CO?DEMO
+  +--> ?PR?_UART1SENDS?DEMO
+  +--> ?PR?_DELAY?DEMO
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/23/2018  15:13:18  PAGE 2
+
+
+
+
+SYMBOL TABLE OF MODULE:  demo (DEMO)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DEMO
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  C:00DFH         PUBLIC        _delay
+  B:00A8H.4       PUBLIC        ES
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:0003H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0089H         PUBLIC        TMOD
+  C:0026H         PUBLIC        Serial_interrupt
+  C:0090H         PUBLIC        esp8266_init
+  D:008DH         PUBLIC        TH1
+  C:00BDH         PUBLIC        _Uart1Sends
+  B:0098H.7       PUBLIC        SM0
+  B:0098H.6       PUBLIC        SM1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  B:0098H.4       PUBLIC        REN
+  B:00A0H.0       PUBLIC        led1
+  B:00A0H.1       PUBLIC        led2
+  B:00A0H.2       PUBLIC        led3
+  C:00A7H         PUBLIC        SerialInti
+  -------         PROC          SERIALINTI
+  C:00A7H         LINE#         25
+  C:00A7H         LINE#         26
+  C:00A7H         LINE#         27
+  C:00AAH         LINE#         32
+  C:00ADH         LINE#         33
+  C:00B0H         LINE#         36
+  C:00B2H         LINE#         37
+  C:00B4H         LINE#         38
+  C:00B6H         LINE#         39
+  C:00B8H         LINE#         40
+  C:00BAH         LINE#         41
+  C:00BCH         LINE#         42
+  -------         ENDPROC       SERIALINTI
+  -------         PROC          _UART1SENDS
+  D:0001H         SYMBOL        str
+  C:00BDH         LINE#         47
+  C:00BDH         LINE#         48
+  C:00BDH         LINE#         49
+  C:00C2H         LINE#         50
+  C:00C2H         LINE#         51
+  C:00C4H         LINE#         52
+  C:00C7H         LINE#         53
+  C:00C9H         LINE#         54
+  C:00D0H         LINE#         55
+  C:00D2H         LINE#         56
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/23/2018  15:13:18  PAGE 3
+
+
+  -------         ENDPROC       _UART1SENDS
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        ttt
+  C:00DFH         LINE#         62
+  C:00DFH         LINE#         63
+  C:00DFH         LINE#         64
+  C:00E9H         LINE#         65
+  -------         ENDPROC       _DELAY
+  -------         PROC          ESP8266_INIT
+  C:0090H         LINE#         69
+  C:0090H         LINE#         70
+  C:0090H         LINE#         71
+  C:0099H         LINE#         72
+  C:00A0H         LINE#         73
+  -------         ENDPROC       ESP8266_INIT
+  -------         PROC          MAIN
+  C:0003H         LINE#         77
+  C:0003H         LINE#         78
+  C:000AH         LINE#         79
+  C:0011H         LINE#         80
+  C:0014H         LINE#         81
+  C:0017H         LINE#         82
+  C:001AH         LINE#         83
+  C:001AH         LINE#         84
+  C:001AH         LINE#         87
+  -------         ENDPROC       MAIN
+  -------         PROC          SERIAL_INTERRUPT
+  C:0026H         LINE#         93
+  C:002FH         LINE#         95
+  C:0032H         LINE#         96
+  C:0032H         LINE#         97
+  C:0034H         LINE#         98
+  C:0042H         LINE#         99
+  C:0042H         LINE#         100
+  C:0046H         LINE#         101
+  C:004AH         LINE#         103
+  C:004CH         LINE#         105
+  C:004CH         LINE#         106
+  C:004CH         LINE#         107
+  -------         ENDPROC       SERIAL_INTERRUPT
+  -------         ENDMOD        DEMO
+
+  -------         MODULE        ?C?CLDPTR
+  C:0077H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+Program Size: data=9.0 xdata=0 code=227
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
